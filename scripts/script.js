@@ -105,16 +105,17 @@ slider.value.monitor({fireOnInitialValue: false}).subscribe(function (mod)
 slider.visible = true;
 
 function start() {
-    Patches.inputs.setScalar('B', 0.5);
-    Patches.inputs.setScalar('C', 0.167);
-    Patches.inputs.setScalar('H', 0.5);
-    Patches.inputs.setScalar('S', 0);
-    Patches.inputs.setScalar('L', 0);
     Brightness = 0.5;
     Contrast = 0.167;
     Hue = 0.5;
     Saturation = 0;
     Lightness = 0;
+
+    Patches.inputs.setScalar('B', Brightness);
+    Patches.inputs.setScalar('C', Contrast);
+    Patches.inputs.setScalar('H', Hue);
+    Patches.inputs.setScalar('S', Saturation);
+    Patches.inputs.setScalar('L', Lightness);
 }
 
 start();
