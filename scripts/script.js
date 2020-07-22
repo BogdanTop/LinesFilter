@@ -3,7 +3,7 @@ const NativeUI = require('NativeUI');
 const Textures = require('Textures');
 const Patches = require('Patches');
 
-const rectangle = Scene.root.find('rectangle0');
+const rectangle = Scene.root.findFirst('rectangle0');
 const slider = NativeUI.slider;
 const picker = NativeUI.picker;
 
@@ -80,23 +80,23 @@ slider.value.monitor({fireOnInitialValue: false}).subscribe(function (mod)
     switch (currenteffect)
     {
         case 'brightness':
-            Patches.setScalarValue('B', val);
+            Patches.inputs.setScalar('B', val);
             Brightness = val;
             break;
         case 'contras':
-            Patches.setScalarValue('C', val);
+            Patches.inputs.setScalar('C', val);
             Contrast = val;
             break;
         case 'hue':
-            Patches.setScalarValue('H', val);
+            Patches.inputs.setScalar('H', val);
             Hue = val;
             break;
         case 'saturation':
-            Patches.setScalarValue('S', val);
+            Patches.inputs.setScalar('S', val);
             Saturation = val;
             break;
         case 'lightness':
-            Patches.setScalarValue('L', val);
+            Patches.inputs.setScalar('L', val);
             Lightness = val;
             break;
     }
@@ -105,11 +105,11 @@ slider.value.monitor({fireOnInitialValue: false}).subscribe(function (mod)
 slider.visible = true;
 
 function start() {
-    Patches.setScalarValue('B', 0.5);
-    Patches.setScalarValue('C', 0.167);
-    Patches.setScalarValue('H', 0.5);
-    Patches.setScalarValue('S', 0);
-    Patches.setScalarValue('L', 0);
+    Patches.inputs.setScalar('B', 0.5);
+    Patches.inputs.setScalar('C', 0.167);
+    Patches.inputs.setScalar('H', 0.5);
+    Patches.inputs.setScalar('S', 0);
+    Patches.inputs.setScalar('L', 0);
     Brightness = 0.5;
     Contrast = 0.167;
     Hue = 0.5;
