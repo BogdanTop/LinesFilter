@@ -106,7 +106,7 @@ slider.visible = true;
 
 function start() {
     Brightness = 0.5;
-    Contrast = 0.167;
+    Contrast = 0.5;
     Hue = 0.5;
     Saturation = 0;
     Lightness = 0;
